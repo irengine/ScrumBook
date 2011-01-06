@@ -1,0 +1,7 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+ScrumBook:
+  code: SDD
+  name: Scrum for Disributed Development
+  description: N/A
+  version: 1_0
