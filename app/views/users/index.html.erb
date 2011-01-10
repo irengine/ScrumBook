@@ -1,0 +1,33 @@
+<h1>用户管理 users</h1>
+
+<table width="90%">
+  <tr>
+    <th>用户名</th>
+    <th>真实姓名</th>
+    <th>Email</th>
+    <th>操作</th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+    <td>
+      <%= user.name %>
+    </td>
+    <td>
+        <%= user.full_name %>
+    </td>
+    <td>
+        <%= user.email %>
+    </td>
+     <td>
+        <%= link_to "编辑",edit_user_path(user.id) %> &nbsp;| &nbsp; <%= link_to '删除', user, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+  <% end %>
+  <tr>
+    <td colspan="4" align="right">
+        <%= link_to '添加新用户', new_user_path %>
+    </td>
+  </tr>
+</table>
+
+<br />

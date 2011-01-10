@@ -1,0 +1,76 @@
+<h1>修改用户信息 UserInfo</h1><h3><%=  params["Messages"]%></h3>
+<%= form_for(@user) do |f| %>
+<table width="100%">
+  <% if (@user.name==session["UserName"]) %>
+    <tr>
+        <td colspan="2">
+          修改密码
+        </td>
+    </tr>
+    <tr>
+        <td style="width:15%">
+             旧密码:
+        </td>
+        <td>
+              <input name="oldPwd" type="password"/>
+        </td>
+    </tr>
+      <tr>
+        <td>
+             新密码:
+        </td>
+        <td>
+              <input name="newPwd" type="password"/>
+        </td>
+    </tr>
+     <tr>
+        <td>
+             确认密码:
+        </td>
+        <td>
+              <input name="cfmPwd" type="password"/>
+        </td>
+    </tr>
+      <% else %>
+       <tr>
+        <td colspan="2">
+          用户名: &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<a style=" font-size:18pt"><%= @user.name %></a>
+        </td>
+       </tr>
+      <tr>
+        <td width="15%">
+             用户密码:
+        </td>
+        <td>
+              <input name="UserPassword" type="password"/>
+        </td>
+    </tr>
+      <% end %>
+    <tr>
+        <td colspan="2">
+          其他信息
+        </td>
+    </tr>
+    <tr>
+        <td>
+             真实姓名:
+        </td>
+        <td>
+            <input name="full_name" value="<%= @user.full_name %>"/>
+        </td>
+    </tr>
+     <tr>
+        <td>
+             Email:
+        </td>
+        <td>
+          <input name="email" value="<%= @user.email %>"/>             
+        </td>
+    </tr>
+      <tr>
+        <td colspan="2" align="center">
+           <%= f.submit :"保    存" %>
+        </td>
+    </tr>
+</table>
+<% end  %>

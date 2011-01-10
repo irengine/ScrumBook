@@ -1,0 +1,42 @@
+<h1>添加新用户 New User</h1><h3><%=  params["Messages"]%></h3>
+<%= form_for(@user) do |f| %>
+<table width="100%">
+    <tr>
+        <td style="width:20%">
+             用户名称:
+        </td>
+        <td>
+                <%= f.text_field :name ,:size=>"38" %>
+        </td>
+   </tr>
+   <tr>
+        <td style="width:20%">
+             密码:
+        </td>
+        <td>
+                <%= f.text_field :password,:type=>"password",:size=>"40" %>
+        </td>
+   </tr>
+   <tr>
+        <td>
+             真实姓名:
+        </td>
+        <td>
+             <%= f.text_field :full_name ,:size=>"38" %>
+        </td>
+   </tr>
+   <tr>
+        <td>
+             Email:
+        </td>
+        <td>
+            <%= f.text_field :email ,:size=>"38" %>
+        </td>
+   </tr>
+   <tr>
+        <td colspan="2" align="center">
+           <%= f.submit :"添    加" %> <%= link_to "返  回",users_path  %>
+        </td>
+   </tr>
+</table>
+<% end  %>
