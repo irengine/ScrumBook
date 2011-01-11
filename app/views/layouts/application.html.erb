@@ -5,65 +5,10 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
-   <style>
-      body{	margin:auto;width:900px; border:solid 0px #000;
-}
-  </style>
 </head>
 <body>
-    <table width="100%"  cellspacing="0">
 
-        <tr>
-            <td style="height:100px " class="row">
+<%= yield %>
 
-            </td>
-        </tr>
-          <tr>
-            <td style="height:20px" align="right" class="row">
-               你好![<%= session["UserName"] %>]&nbsp;&nbsp;|&nbsp;&nbsp;<%= link_to  "退出", :controller =>"logins", :action=>'logout' %>
-            </td>
-        </tr>
-        <tr>
-            <td class="row">
-                <table width="100%" >
-                    <tr>
-                        <td style="width: 15%;height:500px" valign="baseline" class="row">
-                          <table width="100%" >                      
-                            <tr>
-                              <th>
-                                <%= link_to  "我的Sprint", products_path %>                                 
-                              </th>
-                            </tr>
- <tr>
-                              <th>
-                                 我的任务
-                              </th>
-                            </tr>
-                             <tr>
-                              <th>
-                                <%= link_to  "个人信息", edit_user_path(session["UserId"]) %>
-                              </th>
-                            </tr>
-                             <tr>
-                              <th>
-                                 <%= link_to  "用户管理", :controller =>"users", :action=>'index' %>
-                              </th>
-                            </tr>
-                          </table>
-
-                        </td>
-                        <td valign="baseline" class="row">
-                          <%= yield %>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td style="height:60px" align="center" >
-                版权所有@2011-1-10
-            </td>
-        </tr>
-    </table>
 </body>
 </html>
