@@ -5,6 +5,7 @@ class CreateFeatures < ActiveRecord::Migration
       t.string :content
       t.integer :estimated_hours, :null=>false, :default=>0
       t.integer :product_id
+      t.integer :sprint_id
 
       t.timestamps
     end

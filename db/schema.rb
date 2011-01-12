@@ -10,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110112125757) do
+ActiveRecord::Schema.define(:version => 20110112131150) do
 
   create_table "features", :force => true do |t|
     t.string   "subject",                        :null => false
     t.string   "content"
     t.integer  "estimated_hours", :default => 0, :null => false
     t.integer  "product_id"
+    t.integer  "sprint_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,6 +27,15 @@ ActiveRecord::Schema.define(:version => 20110112125757) do
     t.string   "name",        :null => false
     t.string   "description"
     t.string   "version"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sprints", :force => true do |t|
+    t.string   "code"
+    t.date     "begin_date"
+    t.date     "end_date"
+    t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
