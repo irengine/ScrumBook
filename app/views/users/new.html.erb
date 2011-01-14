@@ -1,4 +1,4 @@
-<h1>添加新用户 New User</h1><h3><%=  params["Messages"]%></h3>
+<h1>添加新用户 New User</h1><%= flash[:notice] %>
 <%= form_for(@user) do |f| %>
 <table width="100%">
     <tr>
@@ -6,7 +6,9 @@
              用户名称:
         </td>
         <td>
-                <%= f.text_field :name ,:size=>"38" %>
+          <div class="field">
+          <%= f.text_field :name ,:size=>"30" %>
+          </div>
         </td>
    </tr>
    <tr>
@@ -14,7 +16,9 @@
              密码:
         </td>
         <td>
-                <%= f.text_field :password,:type=>"password",:size=>"40" %>
+          <div class="field">
+                <%= f.text_field :password,:type=>"password",:size=>"30" %>
+          </div>
         </td>
    </tr>
    <tr>
@@ -22,7 +26,7 @@
              真实姓名:
         </td>
         <td>
-             <%= f.text_field :full_name ,:size=>"38" %>
+             <%= f.text_field :full_name ,:size=>"30" %>
         </td>
    </tr>
    <tr>
@@ -30,7 +34,9 @@
              Email:
         </td>
         <td>
-            <%= f.text_field :email ,:size=>"38" %>
+          <div class="field">
+            <%= f.text_field :email ,:size=>"30" %> 
+          </div>
         </td>
    </tr>
    <tr>
