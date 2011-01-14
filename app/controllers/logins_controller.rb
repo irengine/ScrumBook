@@ -14,8 +14,8 @@ class LoginsController < ApplicationController
     @passwords=params["passwords"]
     @user=User.authenticate(@userName,@passwords)
     if(@user!=nil)
-      writeSession("UserName",@user.name)
-      writeSession("UserId",@user.id)
+      write_Session("UserName",@user.name)
+      write_Session("UserId",@user.id)
       redirect_to(:controller => "products",:action => "index")
     else
       redirect_to(:action=>'index',:ErrorMessage => '用户名或密码错误!.')
@@ -23,9 +23,9 @@ class LoginsController < ApplicationController
   end
 
   def logout
-    writeSession("UserId","")
-    writeSession("UserName","")
-    writeSession("ProductCode","")
+    write_Session("UserId","")
+    write_Session("UserName","")
+    write_Session("ProductCode","")
     redirect_to(:controller=> 'welcomes', :action=> 'index')
   end
 end
