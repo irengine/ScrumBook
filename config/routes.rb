@@ -1,16 +1,4 @@
 ScrumBook::Application.routes.draw do
-
-  match '/logins/logout', :controller=>'logins', :action=>'logout'
-#  match '/users/edit', :controller=>'users', :action=>'edit'
-#  match '/users/update', :controller=>'users', :action=>'update'
-
-  resources :welcomes
-  resources :logins
-  resources :products
-  resources :users
-
-  match '/logins/validate'
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

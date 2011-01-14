@@ -3,7 +3,6 @@ require 'rubygems'
 # Set up gems listed in the Gemfile.
 gemfile = File.expand_path('../../Gemfile', __FILE__)
 begin
-  Encoding.default_internal, Encoding.default_external = ['utf-8'] * 2
   ENV['BUNDLE_GEMFILE'] = gemfile
   require 'bundler'
   Bundler.setup

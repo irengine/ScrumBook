@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
-  validates_presence_of :name, :email #, :password
+  validates_presence_of :name, :email, :password
   validates_uniqueness_of :name, :email
   validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/
-#  validates_confirmation_of :password
+  validates_confirmation_of :password
 
   def password
     @password
@@ -25,7 +25,6 @@ class User < ActiveRecord::Base
     end
     user
   end
-
 
   private
 

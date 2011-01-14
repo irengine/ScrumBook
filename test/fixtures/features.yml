@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  subject: MyString
+  content: MyString
+  estimated_hours: 1
+
+two:
+  subject: MyString
+  content: MyString
+  estimated_hours: 1

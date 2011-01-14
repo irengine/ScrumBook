@@ -1,0 +1,8 @@
+zh:
+  user_add_error: "用户添加失败"
+  user_authenticate_error: "用户验证失败"
+  user_update_succeed: "用户数据保存成功"
+  user_update_error: "用户数据保存失败"
+  product_add_succeed: "产品添加成功"
+  product_add_update: "产品更新成功"
+  puoduct_add_error: "产品添加失败"
