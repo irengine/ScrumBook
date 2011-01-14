@@ -1,21 +1,44 @@
 <h1>我的产品 My Products</h1>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div class="div_table">
+     <div class="div_tr">
+        <div class="div_th">
+         <%= label_tag "编号" %>
+        </div>
+        <div class="div_th" style="width:280px">
+         <%= label_tag "产品名称" %>
+        </div>
+        <div class="div_th" >
+         <%= label_tag "版本号" %>
+        </div>
+         <div class="div_th">
+         <%= label_tag "操作" %>
+        </div>
+    </div>
 <% @products.each do |product| %>
-  <tr>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+    <div class="div_tr">
+      <div class="div_td">
+         <%= product.code %>
+      </div>
+      <div class="div_td" style="width:280px">
+         <%= product.name %>
+      </div>
+         <div class="div_td" >
+         <%= product.version %>
+      </div>
+      <div class="div_td">
+         <%= link_to "编辑",edit_product_path(product.id) %> |  <%= link_to '删除', product, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+    </div>
+  <% end %>
+    <div style="align:left; width:93%" align="right">
+            <%= link_to '添加新产品', new_product_path %>
+     </div>
+</div>
 
-<br />
 
-<%= link_to 'New Product', new_product_path %>
+
+
+
+
+

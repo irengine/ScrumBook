@@ -1,6 +1,27 @@
-<h1>Editing product</h1>
+<h1>编辑产品信息 Editing product</h1>
 
-<%= render 'form' %>
+<%= form_for(@product) do |f| %>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+    <div class="div_table">
+      <div class="div_tr" style="width:100%">
+        <div class="div_td" style="width:30%"><%= label_tag "产品编号:"%></div>
+        <div class="div_td" style="width:80%"><%= f.text_field :code%></div>
+      </div>
+      <div class="div_tr" style="width:100%">
+        <div class="div_td" style="width:30%"><%= label_tag "产品名称:"%></div>
+        <div class="div_td" style="width:80%"><%= f.text_field :name%></div>
+      </div>
+       <div class="div_tr" style="width:100%">
+        <div class="div_td" style="width:30%"><%= label_tag "版本号:"%></div>
+        <div class="div_td" style="width:80%"><%= f.text_field :version %></div>
+      </div>
+      <div class="div_tr" style="width:100%">
+        <div class="div_td" style="width:15%"><%= label_tag "产品描述:"%></div>
+        <div class="div_td" style="width:80%"><%= f.text_area :description ,:size=>"60x12" %></div>
+      </div>
+      <div class="div_tr" style="width:100%">
+        <div class="div_td" style="width:650px" align="right"><%= f.submit :"更新 Update Product"%>
+          | <%= link_to '返  回', products_path %></div>
+      </div>
+    </div>
+<% end %>
