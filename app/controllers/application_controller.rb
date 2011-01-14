@@ -1,24 +1,24 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  protect_from_forgery 
 
-  def getSessionByKey(key)
+  def get_Session_Key(key)
     return session[key];
   end
 
-  def writeSession(key,values)
+  def write_Session(key,values)
     session[key]=values;
   end
 
-  def getUserName()
-    return session["UserName"]
+  def get_UserName()
+    return get_Session_Key("UserName")
   end
 
-  def getUserId()
-    return getSessionByKey("UserId")
+  def get_UserId()
+    return get_Session_Key("UserId")
   end
 
-  def getUserProductCode()
-     return getSessionBykey("ProductCode") 
+  def get_UserProductCode()
+     return get_Session_Key("ProductCode") 
   end
 
   def login
