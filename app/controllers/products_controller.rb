@@ -10,16 +10,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  # GET /products/1
-  # GET /products/1.xml
-  def show
-    @product = Product.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @product }
-    end
-  end
 
   # GET /products/new
   # GET /products/new.xml
@@ -42,14 +32,11 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(params[:product])
 
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to(@product, :notice => 'Product was successfully created.') }
-        format.xml  { render :xml => @product, :status => :created, :location => @product }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @product.errors, :status => :unprocessable_entity }
-      end
+    if @product.save
+      redirect_to(:controller=>"products",:action=>'index')
+    else
+      flash[:notice]=I18n.t(:product_add_error)
+      redirect_to(:controller=>"products",:action=>'new')
     end
   end
 
@@ -60,7 +47,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to(@product, :notice => 'Product was successfully updated.') }
+        format.html { redirect_to(@product, :notice => I18n.t(:product_add_update) ) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
