@@ -12,10 +12,20 @@
 </head>
 <body>
        <table width="100%"  cellspacing="0">
+        <tr>
+            <td style="height:100px " class="row">
+
+            </td>
         </tr>
           <tr>
             <td style="height:20px" align="right" class="row">
-               你好![<%= session["UserName"] %>]&nbsp;&nbsp;|&nbsp;&nbsp;<%= link_to  "退出", :controller =>"logins", :action=>'logout' %>
+               你好![<%= session["UserName"] %>],你当前操作的产品是[
+              <% if(!session["ProductName"].nil? && !session["ProductName"].empty?) %>
+                  <%= session["ProductName"] %>]
+                  <% else %>
+                       <%="全部"%>]
+                  <% end %>
+                  &nbsp;|&nbsp;<%= link_to  "退出", :controller =>"logins", :action=>'logout' %>
             </td>
         </tr>
         <tr>
